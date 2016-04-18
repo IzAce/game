@@ -24,7 +24,4 @@ public class Game extends ApplicationAdapter {
 		batch.draw(img, 0, 0);
 		batch.end();
 	}
-
-
-
 }
