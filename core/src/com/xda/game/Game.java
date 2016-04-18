@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -23,5 +23,19 @@ public class Game extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.end();
+	}
+
+	@Override
+	public void	resize(int width, int height){	}
+
+	@Override
+	public void pause(){}
+
+	@Override
+	public void resume(){}
+
+	@Override
+	public void dispose () {
+		batch.dispose();
 	}
 }
