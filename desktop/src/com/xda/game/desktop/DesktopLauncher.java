@@ -8,8 +8,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Game [In-Dev Build  0.1]";
-		cfg.height = 800;
-		cfg.width = 600;
+		cfg.height = 600;
+		cfg.width = 800;
 		cfg.fullscreen = false;
 		new LwjglApplication(new Game(), cfg);
 	}

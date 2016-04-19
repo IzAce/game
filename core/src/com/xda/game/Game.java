@@ -1,30 +1,41 @@
 package com.xda.game;
 
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 
-import com.badlogic.gdx.graphics.GL20;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.xda.game.ECS.Component.Position;
+import com.xda.game.ECS.Component.Drawable;
+import com.xda.game.ECS.Engine.Engine;
+import com.xda.game.ECS.System.Drawing;
 
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img;
-
+	Engine engine;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+
+
+		engine = new Engine();
+		engine.addSystem(new Drawing(batch));
+
+
+		Entity player = new Entity();
+		player.add(new Position(120,120));
+		player.add(new Drawable(new Texture("badlogic.jpg")));
+
+		engine.addEntity(player);
+
+
+
 	}
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+		engine.update(Gdx.graphics.getDeltaTime());
 	}
 
 	@Override
