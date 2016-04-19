@@ -12,13 +12,13 @@ public class Drawable implements Component {
     public float centerH;
     public float centerW;
 
-    public Drawable(Texture tex){
-        sprite = new com.badlogic.gdx.graphics.g2d.Sprite(tex);
+    public Drawable(Texture texture){
+        sprite = new Sprite(texture);
         centerH = sprite.getHeight()/2;
         centerW = sprite.getWidth()/2;
     }
 
-    public Drawable(com.badlogic.gdx.graphics.g2d.Sprite sprite){
+    public Drawable(Sprite sprite){
         this.sprite = sprite;
         centerH = sprite.getHeight()/2;
         centerW = sprite.getWidth()/2;

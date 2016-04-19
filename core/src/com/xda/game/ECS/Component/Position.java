@@ -8,7 +8,7 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class Position implements Component {
     public float x;
-    public  float y;
+    public float y;
 
     public Position(float x, float y){
         this.x = x;
@@ -17,5 +17,11 @@ public class Position implements Component {
 
     public Vector2 getVector(){
         return new Vector2(x, y);
+    }
+
+    public void setVector(Vector2 vector){
+        this.x = vector.x;
+        this.y = vector.y;
+
     }
 }

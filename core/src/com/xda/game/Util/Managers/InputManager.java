@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class InputManager implements InputProcessor{
 
-    public static Vector2 KeyForce = new Vector2(0,0);
+    public Vector2 KeyForce = new Vector2(0,0);
 
     public boolean up;
     public boolean down;
