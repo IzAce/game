@@ -15,26 +15,17 @@ public class InputManager implements InputProcessor{
     private boolean fullscrean = false;
     public boolean enter = false;
     public boolean alt = false;
-    public int timesCalled = 0;
+
+    private Thread altTab;
 
     @Override
     public boolean keyDown(int keycode) {
-//        if(keycode == Input.Keys.ENTER){
-//            if(enter != true){
-//                timesCalled++;
-//                enter = true;
-//            }
-//            checkCombo();
-//        }
-//        if(keycode == Input.Keys.ALT_LEFT || keycode == Input.Keys.ALT_RIGHT )
-//        {
-//            if(alt != true)
-//            {
-//                timesCalled++;
-//                alt = true;
-//            }
-//            checkCombo();
-//        }
+
+
+        if(keycode == Input.Keys.ALT_LEFT || keycode == Input.Keys.ALT_RIGHT )
+        {
+            
+        }
 
         if(keycode == Input.Keys.A){
             KeyForce.x -= 1;
@@ -54,24 +45,22 @@ public class InputManager implements InputProcessor{
         if(keycode == Input.Keys.SHIFT_LEFT || keycode == Input.Keys.SHIFT_RIGHT){
             down = true;
         }
-
-
         return false;
     }
 
     @Override
     public boolean keyUp(int keycode) {
         if (keycode == Input.Keys.A) {
-            KeyForce.x -= 1;
-        }
-        if (keycode == Input.Keys.D) {
             KeyForce.x += 1;
         }
+        if (keycode == Input.Keys.D) {
+            KeyForce.x -= 1;
+        }
         if (keycode == Input.Keys.W) {
-            KeyForce.y += 1;
+            KeyForce.y -= 1;
         }
         if (keycode == Input.Keys.S) {
-            KeyForce.y -= 1;
+            KeyForce.y += 1;
         }
         if(keycode == Input.Keys.SPACE){
             up = false;
@@ -111,17 +100,7 @@ public class InputManager implements InputProcessor{
     public boolean scrolled(int amount) {
         return false;
     }
-//
-//    //Checks if key combination is initiated
-//    public void checkCombo()
-//    {
-//        if((alt == true && enter == true) || (timesCalled % 2 != 0 && timesCalled > 1))
-//        {
-//            fullscrean = !fullscrean;
+
 //            Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
-//
-//            alt = false;
-//            enter = false;
-//        }
-//    }
+
 }
