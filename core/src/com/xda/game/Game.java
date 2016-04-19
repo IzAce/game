@@ -14,6 +14,7 @@ import com.xda.game.ECS.System.Drawing;
 public class Game extends ApplicationAdapter {
 	SpriteBatch batch;
 	Engine engine;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -28,9 +29,6 @@ public class Game extends ApplicationAdapter {
 		player.add(new Drawable(new Texture("badlogic.jpg")));
 
 		engine.addEntity(player);
-
-
-
 	}
 
 	@Override
